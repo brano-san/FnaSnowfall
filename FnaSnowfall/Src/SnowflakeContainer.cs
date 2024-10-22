@@ -4,13 +4,13 @@ using System.Collections.Generic;
 
 namespace FnaSnowfall
 {
-    public class SnowflakeHelper
+    public class SnowflakeContainer
     {
         private readonly List<Snowflake> snowflakes;
 
         private readonly Texture2D snowflakeTexture;
 
-        public SnowflakeHelper(Texture2D texture)
+        public SnowflakeContainer(Texture2D texture)
         {
             snowflakes = new List<Snowflake>();
             snowflakeTexture = texture;
@@ -21,7 +21,7 @@ namespace FnaSnowfall
         /// </summary>
         public void AddSnowflake(Vector2 position, float speed, float size, int windowWidth, int windowHeight)
         {
-            Snowflake snowflake = new Snowflake(snowflakeTexture, position, speed, size, windowWidth, windowHeight);
+            var snowflake = new Snowflake(snowflakeTexture, position, speed, size, windowWidth, windowHeight);
             snowflakes.Add(snowflake);
         }
 

@@ -12,12 +12,14 @@ namespace FnaSnowfall
 
         private Texture2D backgroundTexture;
 
-        private SnowflakeHelper snowflakeHelper;
+        private SnowflakeContainer snowflakeHelper;
 
         private const int SnowflakeCount = 1000;
 
         private int screenWidth;
         private int screenHeight;
+
+        private MouseState prevMouseState;
 
         public Snowfall()
         {
@@ -41,12 +43,14 @@ namespace FnaSnowfall
 
         protected override void LoadContent()
         {
+            prevMouseState = Mouse.GetState();
+
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             backgroundTexture = Content.Load<Texture2D>("background");
 
             Texture2D snowflakeTexture = Content.Load<Texture2D>("snow");
-            snowflakeHelper = new SnowflakeHelper(snowflakeTexture);
+            snowflakeHelper = new SnowflakeContainer(snowflakeTexture);
 
             for (var i = 0; i < SnowflakeCount; i++)
             {
@@ -61,7 +65,9 @@ namespace FnaSnowfall
 
         protected override void Update(GameTime gameTime)
         {
-            if (Keyboard.GetState().IsKeyDown(Keys.Escape))
+            var currentMouseState = Mouse.GetState();
+            if (prevMouseState != currentMouseState ||
+                Keyboard.GetState().GetPressedKeys().Length > 0)
             {
                 Exit();
             }

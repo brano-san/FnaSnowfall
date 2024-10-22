@@ -78,7 +78,7 @@
     <Compile Include="Src\RandomHelper.cs" />
     <Compile Include="Src\Snowfall.cs" />
     <Compile Include="Src\Snowflake.cs" />
-    <Compile Include="Src\SnowflakeHelper.cs" />
+    <Compile Include="Src\SnowflakeContainer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
