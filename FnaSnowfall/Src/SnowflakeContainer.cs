@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 namespace FnaSnowfall
 {
+    /// <summary>
+    /// Хранение <see cref="Snowflake"/> в контейнере
+    /// </summary>
     public class SnowflakeContainer
     {
         private readonly List<Snowflake> snowflakes;

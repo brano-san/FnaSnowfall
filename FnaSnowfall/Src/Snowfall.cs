@@ -1,10 +1,12 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
 namespace FnaSnowfall
 {
+    /// <summary>
+    /// Основной класс приложения
+    /// </summary>
     public class Snowfall : Game
     {
         private readonly GraphicsDeviceManager graphics;

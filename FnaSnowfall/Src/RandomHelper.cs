@@ -7,7 +7,7 @@ namespace FnaSnowfall
     /// </summary>
     public static class RandomHelper
     {
-        private static Random random = new Random();
+        private readonly static Random random = new Random();
 
         /// <summary>
         /// Получить случайное вещественное число между min и max.

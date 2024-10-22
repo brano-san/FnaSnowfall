@@ -1,12 +1,10 @@
-﻿using System;
-
-namespace FnaSnowfall
+﻿namespace FnaSnowfall
 {
     internal class Program
     {
         private static void Main(string[] args)
         {
-            Snowfall snowfall = new Snowfall();
+            var snowfall = new Snowfall();
             snowfall.Run();
         }
     }
